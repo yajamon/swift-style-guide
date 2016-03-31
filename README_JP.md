@@ -307,3 +307,4 @@ _理由:_ オペレータは記号でできており、それらが型や値の�
 * [中文版](https://github.com/Artwalk/swift-style-guide/blob/master/README_CN.md)
 * [日本語版](README_JP.md)
 * [한국어판](https://github.com/minsOne/swift-style-guide/blob/master/README_KR.md)
+* [Versión en Español](https://github.com/antoniosejas/swift-style-guide/blob/spanish/README-ES.md)
