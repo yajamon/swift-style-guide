@@ -282,3 +282,4 @@ _理由:_ オペレータは記号でできており、それらが型や値の�
 #### 翻訳
 
 * [中文版](https://github.com/Artwalk/swift-style-guide/blob/master/README_CN.md)
+* [日本語版](README_JP.md)
