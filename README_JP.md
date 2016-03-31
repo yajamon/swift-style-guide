@@ -188,7 +188,7 @@ class Vehicle {
     }
 
     func maximumTotalTirePressure(pressurePerWheel: Float) -> Float {
-        return pressurePerWheel * numberOfWheels
+        return pressurePerWheel * Float(numberOfWheels)
     }
 }
 
@@ -213,7 +213,7 @@ protocol Vehicle {
 }
 
 func maximumTotalTirePressure(vehicle: Vehicle, pressurePerWheel: Float) -> Float {
-    return pressurePerWheel * vehicle.numberOfWheels
+    return pressurePerWheel * Float(vehicle.numberOfWheels)
 }
 
 struct Bicycle: Vehicle {
