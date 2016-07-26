@@ -28,11 +28,34 @@ Use `let foo = …` over `var foo = …` wherever possible (and when in doubt). 
 
 _Rationale:_ The intent and meaning of both keywords is clear, but *let-by-default* results in safer and clearer code.
 
-A `let`-binding guarantees and *clearly signals to the programmer* that its value is supposed to and will never change. Subsequent code can thus make stronger assumptions about its usage.
+A `let`-binding guarantees and *clearly signals to the programmer* that its value will never change. Subsequent code can thus make stronger assumptions about its usage.
 
 It becomes easier to reason about code. Had you used `var` while still making the assumption that the value never changed, you would have to manually check that.
 
 Accordingly, whenever you see a `var` identifier being used, assume that it will change and ask yourself why.
+
+### Return and break early
+
+When you have to meet certain criteria to continue execution, try to exit early. So, instead of this:
+
+```swift
+if n.isNumber {
+    // Use n here
+} else {
+    return
+}
+```
+
+use this:
+```swift
+guard n.isNumber else {
+    return
+}
+// Use n here
+```
+
+You can also do it with `if` statement, but using `guard` is prefered, because `guard` statement without `return`, `break` or `continue` produces a compile-time error, so exit is guaranteed.
+
 
 #### Avoid Using Force-Unwrapping of Optionals
 
@@ -59,7 +82,7 @@ _Rationale:_ Explicit `if let`-binding of optionals results in safer code. Force
 
 #### Avoid Using Implicitly Unwrapped Optionals
 
-Where possible, use `let foo: FooType?` instead of `let foo: FooType!` if foo may be nil (Note that in general, `?` can be used instead of `!`).
+Where possible, use `let foo: FooType?` instead of `let foo: FooType!` if `foo` may be nil (Note that in general, `?` can be used instead of `!`).
 
 _Rationale:_ Explicit optionals result in safer code. Implicitly unwrapped optionals have the potential of crashing at runtime.
 
@@ -190,7 +213,7 @@ class Vehicle {
     }
 
     func maximumTotalTirePressure(pressurePerWheel: Float) -> Float {
-        return pressurePerWheel * numberOfWheels
+        return pressurePerWheel * Float(numberOfWheels)
     }
 }
 
@@ -215,7 +238,7 @@ protocol Vehicle {
 }
 
 func maximumTotalTirePressure(vehicle: Vehicle, pressurePerWheel: Float) -> Float {
-    return pressurePerWheel * vehicle.numberOfWheels
+    return pressurePerWheel * Float(vehicle.numberOfWheels)
 }
 
 struct Bicycle: Vehicle {
@@ -284,3 +307,5 @@ _Rationale:_ Operators consist of punctuation characters, which can make them di
 
 * [中文版](https://github.com/Artwalk/swift-style-guide/blob/master/README_CN.md)
 * [日本語版](README_JP.md)
+* [한국어판](https://github.com/minsOne/swift-style-guide/blob/master/README_KR.md)
+* [Versión en Español](https://github.com/antoniosejas/swift-style-guide/blob/spanish/README-ES.md)
