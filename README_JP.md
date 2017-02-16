@@ -21,7 +21,6 @@ Swift コーディング規約
  * 行末に空白を残さない
    * 空白行でのインデント調整もしない
 
-
 #### 可能な限り`var`宣言よりも`let`宣言を使う
 
 可能な限り（どちらか迷った時にも）`var foo = …`より`let foo = …`を使いましょう。`var`は本当に使わないといけない時にだけ使うようにしましょう。（具体的には、あなたがその値が変わり得ることを*知っている*ときや、`weak`プロパティ修飾子を使っている時などです）
@@ -33,7 +32,6 @@ _理由:_ 二つのキーワードの意図と意味は明瞭ですが、*デフ
 コードを論理的に理解するのがより簡単になります。値が決して変わらないと考えているにもかかわらず`var`を使うと、本当に値が変わらないかどうかを手動でチェックしなければいけません。
 
 この方法に従うと結果的に、`var`宣言が使われているのを発見した時は必ず、その値が変わり得ると推測したり、その理由を考えることができます。
-
 
 #### Return と break を早期に行う
 
@@ -57,7 +55,6 @@ guard n.isNumber else {
 ```
 
 If文でも同じことが可能ですが、`guard`を使うことが推奨されます。`guard`文では`return`や`break`、`continue`が無いとコンパイルエラーとなるため、コードブロックから抜け出すことが保証されるからです。
-
 
 #### オプショナル型の開示指定は避ける
 
@@ -308,3 +305,4 @@ _理由:_ オペレータは記号でできており、それらが型や値の�
 * [日本語版](README_JP.md)
 * [한국어판](https://github.com/minsOne/swift-style-guide/blob/master/README_KR.md)
 * [Versión en Español](https://github.com/antoniosejas/swift-style-guide/blob/spanish/README-ES.md)
+* [Versão em Português do Brasil](https://github.com/fernandocastor/swift-style-guide/blob/master/README-PTBR.md)
